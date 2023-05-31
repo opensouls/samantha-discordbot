@@ -1,5 +1,5 @@
 const { Client } = require('discord.js');
-const { Soul, Blueprints } = require('socialagi');
+const { Soul, Blueprints, LanguageProcessor, ThoughtFramework } = require('socialagi');
 const { GatewayIntentBits, MessageType } = require('discord-api-types/v10');
 const {DISCORD_TOKEN_SAMANTHA, DISCORD_DEPLOYMENT_CHANNEL} = require('./config');
 

@@ -16,7 +16,7 @@ const soul = new Soul(Blueprints.SAMANTHA);
 
 soul.on('thinking', () => {
   const channel = client.channels.cache.get(DISCORD_DEPLOYMENT_CHANNEL);
-  channel.sendTyping();
+  setTimeout(() => channel.sendTyping(), 300);
 });
 
 soul.on('says', message => {

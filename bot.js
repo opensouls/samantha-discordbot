@@ -14,6 +14,11 @@ const client = new Client({
 
 const soul = new Soul(Blueprints.SAMANTHA);
 
+soul.on('thinking', () => {
+  const channel = client.channels.cache.get(DISCORD_DEPLOYMENT_CHANNEL);
+  channel.sendTyping();
+});
+
 soul.on('says', message => {
   console.warn('SEND MESSAGE for', soul.blueprint.name, message);
   const channel = client.channels.cache.get(DISCORD_DEPLOYMENT_CHANNEL);
@@ -31,7 +36,6 @@ client.on('messageCreate', async message => {
   const msgInTargetChannel = message.channelId === DISCORD_DEPLOYMENT_CHANNEL;
 
   if (msgInTargetChannel && MessageType.Default === message.type ) {
-    await message.channel.sendTyping();
     soul.tell(`[${message.author.username}] :: ${message.content}`);
   }
 });

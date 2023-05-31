@@ -9,7 +9,7 @@
   "dependencies": {
     "discord-api-types": "^0.37.42",
     "discord.js": "^14.11.0",
-    "socialagi": "^0.0.11"
+    "socialagi": "^0.0.12"
   },
   "devDependencies": {
     "eslint": "^7.32.0"
